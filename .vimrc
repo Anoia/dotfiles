@@ -5,6 +5,9 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
+" Remove trailing white spaces.
+autocmd BufWritePre * %s/\s\+$//e
+
 " UI
 set number              " show line numbers
 set showcmd             " show command in bottom bar
