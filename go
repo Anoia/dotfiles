@@ -7,11 +7,18 @@ echo 'hello'
 sudo -v
 
 echo 'installing packages'
-sudo apt install -y git vim zsh &> /dev/null
+sudo apt install -y git vim zsh terminator &> /dev/null
+
+echo 'making zsh your default shell'
+sudo chsh -s $(which zsh) $USER
+
+echo 'making terminator your default terminal emulator'
+sudo update-alternatives --set x-terminal-emulator $(which terminator)
 
 dotfiles=(
  .gitconfig
  .vimrc
+ .config/terminator/config
 )
 
 echo 'setting up symlinks for dotfiles'
