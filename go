@@ -25,13 +25,16 @@ echo 'setting up symlinks for dotfiles'
 
 for dot in "${dotfiles[@]}"; do
 	if [[ ! -L ~/$dot && ! -f ~/$dot ]]; then
-		ln -s $(pwd)/$dot ~/$dot
+        dir=`dirname $dot`
+        if [[ ! -d ~/$dir ]]; then
+            mkdir --parents ~/$dir
+        fi
+        ln -s $(pwd)/$dot ~/$dot
 		echo "~/$dot linked"
 	else
 		echo "$dot already exist"
 	fi
 done
-
 
 if [[ ! -f /usr/bin/diff-so-fancy ]]; then
 	curl -s https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy  > diff-so-fancy
