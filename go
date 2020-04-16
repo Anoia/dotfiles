@@ -25,10 +25,7 @@ echo 'setting up symlinks for dotfiles'
 
 for dot in "${dotfiles[@]}"; do
 	if [[ ! -L ~/$dot && ! -f ~/$dot ]]; then
-        dir=`dirname $dot`
-        if [[ ! -d ~/$dir ]]; then
-            mkdir --parents ~/$dir
-        fi
+        mkdir -p `dirname ~/$dot` || echo "dir for $dot already exists"
         ln -s $(pwd)/$dot ~/$dot
 		echo "~/$dot linked"
 	else
