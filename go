@@ -18,6 +18,7 @@ sudo update-alternatives --set x-terminal-emulator $(which terminator)
 dotfiles=(
  .gitconfig
  .vimrc
+ .zshrc
  .config/terminator/config
 )
 
