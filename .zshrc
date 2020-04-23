@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/anoia/dev/dotfiles/oh-my-zsh"
@@ -68,7 +68,7 @@ ZSH_THEME="lambda-mod"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages colorize)
 
 source $ZSH/oh-my-zsh.sh
 

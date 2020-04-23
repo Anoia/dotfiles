@@ -7,7 +7,7 @@ echo 'hello'
 sudo -v
 
 echo 'installing packages'
-sudo apt install -y git vim zsh terminator &> /dev/null
+sudo apt install -y git vim zsh terminator python-pip python-pygments &> /dev/null
 
 echo 'making zsh your default shell'
 sudo chsh -s $(which zsh) $USER
